@@ -127,35 +127,35 @@ int main()
 {
 	Spacecraft spacecraft;
 
-	// it will compile and work
+		// it will compile and work
 	Momentum momentum1 = 3.0_Ns;
 	spacecraft.applyMomentum(momentum1);
 
-	// it won't compile
-//Momentum momentum2 = 3.0;						// <- wrong units
-//spacecraft.applyMomentum(momentum2);
+		// it won't compile
+	//Momentum momentum2 = 3.0;					// <- wrong units
+	//spacecraft.applyMomentum(momentum2);
 
-	// it also won't compile
-//Momentum momentum3 = 3.0_s;						// <- wrong units
-//spacecraft.applyMomentum(momentum3);
+		// it also won't compile
+	//Momentum momentum3 = 3.0_s;					// <- wrong units
+	//spacecraft.applyMomentum(momentum3);
 
-	// and it also won't compile
-//Momentum momentum4 = 3_Ns;						// <- wrong type it should be double, not integer
-//spacecraft.applyMomentum(momentum4);
+		// and it also won't compile
+	//Momentum momentum4 = 3_Ns;					// <- wrong type it should be double, not integer
+	//spacecraft.applyMomentum(momentum4);
 
-	// but unfortunately it will compile and work...
-	Momentum momentum5{ 10 };						//it doesn't matter if it's double or integer. it casting it to double
+		// but unfortunately it will compile and work...
+	Momentum momentum5{ 10 };					// <- it doesn't matter if it's double or integer. it casting it to double
 	spacecraft.applyMomentum(momentum5);
 
-	// and this also
+		// and this also
 	Momentum momentum6(5);
 	spacecraft.applyMomentum(momentum6);
 
-	// but it is useful and works!
+		// but it is useful and works!
 	auto momentum7 = 7.0_Ns;
 	spacecraft.applyMomentum(momentum7);
 
-	//another interesting and useful thing
+		//another interesting and useful thing
 	Force force = 30.0_N;
 	Time time1 = 5.0_s;
 	Momentum momentum8 = force * time1;
