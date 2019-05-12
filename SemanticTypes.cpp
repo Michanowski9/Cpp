@@ -5,9 +5,6 @@
 #include <iostream>
 #include <string>
 
-//class SpacecraftTrajectoryControl;
-
-
 template <int M, int K, int S>
 struct MksUnit
 {
